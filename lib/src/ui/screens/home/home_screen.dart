@@ -38,8 +38,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.notifications,
+              color: Colors.blueAccent,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
       body: BodySection(),
       bottomNavigationBar: BottomNavigationBar(
