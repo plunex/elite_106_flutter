@@ -16,7 +16,7 @@ class BodySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomAppBarWidget(),
+        CustomAppBarWidget(title: "My List"),
         SizedBox(
           height: 16,
         ),
