@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardItem extends StatelessWidget {
+  // final double cardWidth;
+  // final double cardHeight;
   final Color color;
   final IconData iconData;
   final String description;
@@ -9,6 +11,8 @@ class CardItem extends StatelessWidget {
 
   const CardItem({
     Key? key,
+    // required this.cardWidth,
+    // required this.cardHeight,
     required this.color,
     required this.iconData,
     required this.description,
@@ -18,18 +22,11 @@ class CardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
-
-    var cardWidth = screenWidth * 0.4;
-    var cardHeight = screenHeight / 3;
-
     return Container(
-      width: cardWidth,
-      height: cardHeight,
-      margin: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-          color: color, borderRadius: BorderRadius.all(Radius.circular(20))),
+      // width: cardWidth,
+      // height: cardHeight,
+      // margin: EdgeInsets.all(8),
+      decoration: BoxDecoration(color: color, borderRadius: BorderRadius.all(Radius.circular(20))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
