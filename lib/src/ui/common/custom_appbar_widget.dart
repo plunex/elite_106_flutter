@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
-  const CustomAppBarWidget({Key? key}) : super(key: key);
+  final bool? shoBackButton;
+  final bool? showOtherIcons;
+  final String title;
+  const CustomAppBarWidget({
+    Key? key,
+    this.shoBackButton,
+    this.showOtherIcons,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,17 +17,38 @@ class CustomAppBarWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          // Icon(
-          //   Icons.chevron_left_sharp,
-          //   size: 34,
-          // ),
+          (shoBackButton == null)
+              ? Container()
+              : Icon(
+                  Icons.chevron_left_sharp,
+                  size: 34,
+                ),
           SizedBox(
             width: 12,
           ),
           Text(
-            "My List",
+            title,
             style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          )
+          ),
+          Spacer(),
+          (showOtherIcons == null)
+              ? Container()
+              : Icon(
+                  Icons.chevron_left_sharp,
+                  size: 34,
+                ),
+          SizedBox(
+            width: 12,
+          ),
+          (showOtherIcons == null)
+              ? Container()
+              : Icon(
+                  Icons.chevron_left_sharp,
+                  size: 34,
+                ),
+          SizedBox(
+            width: 12,
+          ),
         ],
       ),
     );
