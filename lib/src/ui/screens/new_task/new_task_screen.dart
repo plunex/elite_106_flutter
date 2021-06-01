@@ -1,5 +1,6 @@
 import 'package:elite_106/src/ui/screens/new_task/components/new_task_tile.dart';
 import 'package:elite_106/src/ui/screens/settings/components/settings_list_tile.dart';
+import 'package:elite_106/src/ui/screens/task_list/components/sort_by_modal_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -90,7 +91,22 @@ class NewTaskScreen extends StatelessWidget {
                 height: 52,
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                      isScrollControlled: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          topRight: Radius.circular(16),
+                        ),
+                      ),
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      builder: (BuildContext context) {
+                        return SortByModalSheet();
+                      },
+                    );
+                  },
                   style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xFF18A0FB)),
