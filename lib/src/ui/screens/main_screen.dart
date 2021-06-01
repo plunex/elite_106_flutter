@@ -1,5 +1,4 @@
 import 'package:elite_106/src/ui/screens/calendar/calendar_screen.dart';
-import 'package:elite_106/src/ui/screens/settings/settings_screen.dart';
 import 'package:elite_106/src/ui/screens/task_list/task_list_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +10,6 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedItem = 0;
   PageController _pageController = PageController();
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
