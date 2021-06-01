@@ -1,3 +1,4 @@
+import 'package:elite_106/src/ui/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/screens/task_list/task_list_screen.dart';
@@ -8,11 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: TaskListScreen());
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: MainScreen(),
+    );
   }
 }
