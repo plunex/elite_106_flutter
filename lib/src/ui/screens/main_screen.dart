@@ -1,4 +1,5 @@
 import 'package:elite_106/src/ui/screens/calendar/calendar_screen.dart';
+import 'package:elite_106/src/ui/screens/settings/settings_screen.dart';
 import 'package:elite_106/src/ui/screens/task_list/task_list_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           TaskListScreen(),
           CalendarScreen(),
-          // SettingsScreen(),
+          SettingsScreen(),
         ],
         controller: _pageController,
       ),
