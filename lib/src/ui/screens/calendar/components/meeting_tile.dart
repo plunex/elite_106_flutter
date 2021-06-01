@@ -19,14 +19,6 @@ class MeetingTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        showDatePicker(
-          context: context,
-          initialDate: DateTime.now(),
-          firstDate: DateTime(2000),
-          lastDate: DateTime(2025),
-        );
-      },
       leading: Container(
         height: 45,
         width: 48,

@@ -1,43 +1,29 @@
-import 'package:elite_106/src/ui/screens/new_task/new_task_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SettingsListTile extends StatefulWidget {
+class NewTaskTile extends StatefulWidget {
   final Color iconBackgroundColor;
   final IconData icon;
   final Color iconColor;
   final String title;
-  final bool showTrailing;
 
-  const SettingsListTile({
+  const NewTaskTile({
     Key? key,
     required this.iconBackgroundColor,
     required this.icon,
     required this.iconColor,
     required this.title,
-    required this.showTrailing,
   }) : super(key: key);
 
   @override
   _SettingsListTileState createState() => _SettingsListTileState();
 }
 
-class _SettingsListTileState extends State<SettingsListTile> {
+class _SettingsListTileState extends State<NewTaskTile> {
   bool switchValue = false;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return NewTaskScreen();
-            },
-          ),
-        );
-      },
       leading: Container(
         height: 45,
         width: 48,
@@ -53,21 +39,10 @@ class _SettingsListTileState extends State<SettingsListTile> {
       title: Text(
         widget.title,
         style: TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: FontWeight.w500,
         ),
       ),
-      trailing: widget.showTrailing
-          ? CupertinoSwitch(
-              value: switchValue,
-              onChanged: (value) {
-                setState(() {
-                  switchValue = value == false ? false : true;
-                  print(switchValue);
-                });
-              },
-            )
-          : null,
     );
   }
 }
