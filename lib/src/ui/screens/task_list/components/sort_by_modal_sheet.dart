@@ -1,3 +1,4 @@
+import 'package:elite_106/src/ui/screens/task_list/components/sort_by_tile.dart';
 import 'package:flutter/material.dart';
 
 class SortByModalSheet extends StatelessWidget {
@@ -86,69 +87,6 @@ class SortByModalSheet extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class SortByTile extends StatefulWidget {
-  final String text;
-  const SortByTile({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-  @override
-  _SortByTileState createState() => _SortByTileState();
-}
-
-class _SortByTileState extends State<SortByTile> {
-  bool selected = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 15.0),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                widget.text,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selected = selected ? false : true;
-                  });
-                },
-                child: CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Color(0xFF3EDBF0),
-                  child: CircleAvatar(
-                    radius: 12,
-                    backgroundColor: Colors.white,
-                    child: Center(
-                      child: Icon(
-                        Icons.circle,
-                        size: 20,
-                        color: selected ? Color(0xFF3EDBF0) : Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Divider(
-            thickness: 0.8,
-          )
-        ],
-      ),
     );
   }
 }
