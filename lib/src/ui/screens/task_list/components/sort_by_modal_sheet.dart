@@ -28,7 +28,8 @@ class SortByModalSheet extends StatelessWidget {
                   builder: (BuildContext context,
                       ScrollController scrollController) {
                     return Padding(
-                      padding: const EdgeInsets.only(top: 50.0),
+                      padding:
+                          const EdgeInsets.only(top: 50.0, left: 20, right: 20),
                       child: Column(
                         children: [
                           Text(
@@ -39,53 +40,24 @@ class SortByModalSheet extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          ListTile(
-                            title: Text(
-                              'Name',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SortByTile(
+                                  text: 'Name',
+                                ),
+                                SortByTile(
+                                  text: 'Time',
+                                ),
+                                SortByTile(
+                                  text: 'Date',
+                                ),
+                                SortByTile(
+                                  text: 'Last modified',
+                                ),
+                              ],
                             ),
-                            trailing: Icon(Icons.circle),
-                          ),
-                          Divider(
-                            thickness: 1,
-                            indent: 20,
-                            endIndent: 20,
-                          ),
-                          ListTile(
-                            title: Text(
-                              'Time',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            trailing: Icon(Icons.circle),
-                          ),
-                          Divider(
-                            thickness: 1,
-                            indent: 20,
-                            endIndent: 20,
-                          ),
-                          ListTile(
-                            title: Text(
-                              'Date',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            trailing: Icon(Icons.circle),
-                          ),
-                          Divider(
-                            thickness: 1,
-                            indent: 20,
-                            endIndent: 20,
                           ),
                         ],
                       ),
@@ -114,6 +86,69 @@ class SortByModalSheet extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class SortByTile extends StatefulWidget {
+  final String text;
+  const SortByTile({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+  @override
+  _SortByTileState createState() => _SortByTileState();
+}
+
+class _SortByTileState extends State<SortByTile> {
+  bool selected = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15.0),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                widget.text,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selected = selected ? false : true;
+                  });
+                },
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Color(0xFF3EDBF0),
+                  child: CircleAvatar(
+                    radius: 12,
+                    backgroundColor: Colors.white,
+                    child: Center(
+                      child: Icon(
+                        Icons.circle,
+                        size: 20,
+                        color: selected ? Color(0xFF3EDBF0) : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Divider(
+            thickness: 0.8,
+          )
+        ],
+      ),
     );
   }
 }
