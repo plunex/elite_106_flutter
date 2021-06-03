@@ -1,8 +1,7 @@
-import 'package:elite_106/src/ui/screens/new_task/components/new_task_tile.dart';
-import 'package:elite_106/src/ui/screens/settings/components/settings_list_tile.dart';
-import 'package:elite_106/src/ui/screens/task_list/components/sort_by_modal_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'components/new_task_tile.dart';
 
 class NewTaskScreen extends StatelessWidget {
   @override

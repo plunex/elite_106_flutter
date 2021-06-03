@@ -1,4 +1,3 @@
-import 'package:elite_106/src/ui/screens/new_task/new_task_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,16 +27,6 @@ class _SettingsListTileState extends State<SettingsListTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return NewTaskScreen();
-            },
-          ),
-        );
-      },
       leading: Container(
         height: 45,
         width: 48,

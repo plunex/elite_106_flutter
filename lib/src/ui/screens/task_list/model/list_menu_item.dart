@@ -1,5 +1,5 @@
-import 'package:elite_106/src/ui/screens/task_list/components/sub_screens/add_new/add_new_screen.dart';
 import 'package:elite_106/src/ui/screens/task_list/components/sub_screens/all_tasks/all_tasks_screen.dart';
+import 'package:elite_106/src/ui/screens/task_list/components/sub_screens/new_task/new_task_screen.dart';
 import 'package:elite_106/src/ui/screens/task_list/components/sub_screens/personal/personal_screen.dart';
 import 'package:elite_106/src/ui/screens/task_list/components/sub_screens/work/work_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,7 +44,7 @@ List<ListMenuItem> menuItems = [
     subTitle: '0 items',
   ),
   ListMenuItem(
-    nextPage: AddNewScreen(),
+    nextPage: NewTaskScreen(),
     backgroundColor: Color(0x663EDBF0),
     icon: Icons.add,
     title: 'Add New',
