@@ -91,22 +91,7 @@ class NewTaskScreen extends StatelessWidget {
                 height: 52,
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      isScrollControlled: true,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16),
-                        ),
-                      ),
-                      context: context,
-                      backgroundColor: Colors.transparent,
-                      builder: (BuildContext context) {
-                        return SortByModalSheet();
-                      },
-                    );
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xFF18A0FB)),

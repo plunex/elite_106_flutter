@@ -1,5 +1,4 @@
 import 'package:elite_106/src/ui/screens/task_list/model/list_menu_item.dart';
-import 'package:elite_106/src/ui/screens/task_list/sections/body_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -61,6 +60,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                   childAspectRatio: 0.75,
                 ),
                 itemBuilder: (context, index) => ListMenuCard(
+                  nextPage: menuItems[index].nextPage,
                   backgroundColor: menuItems[index].backgroundColor,
                   icon: menuItems[index].icon,
                   title: menuItems[index].title,
